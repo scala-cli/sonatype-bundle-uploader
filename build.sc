@@ -201,7 +201,7 @@ def doPublishSonatype(
   publisher.publishAll(isRelease, artifacts: _*)
 }
 
-object ci {
+object ci extends Module {
   def copyJvm(jvm: String = graalVmJvmId, dest: String = "jvm") = T.command {
     import sys.process._
     val command = Seq(
