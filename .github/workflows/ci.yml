@@ -67,7 +67,7 @@ jobs:
       - run: .github/scripts/generate-native-image-windows.sh
         shell: bash
         if: runner.os == 'Windows'
-      - uses: actions/upload-artifact@v3.1.0
+      - uses: actions/upload-artifact@v3.1.1
         with:
           name: launcher-${{ matrix.os }}
           path: artifacts/
@@ -93,7 +93,7 @@ jobs:
           ./mill -i "uploader-static.writeNativeImageScript" generate.sh "" && \
           ./generate.sh && \
           ./mill -i "uploader-static.copyToArtifacts" artifacts/
-      - uses: actions/upload-artifact@v3.1.0
+      - uses: actions/upload-artifact@v3.1.1
         with:
           name: launcher-${{ matrix.os }}-static
           path: artifacts/
@@ -119,7 +119,7 @@ jobs:
           ./mill -i "uploader-mostly-static.writeNativeImageScript" generate.sh "" && \
           ./generate.sh && \
           ./mill -i "uploader-mostly-static.copyToArtifacts" artifacts/
-      - uses: actions/upload-artifact@v3.1.0
+      - uses: actions/upload-artifact@v3.1.1
         with:
           name: launcher-${{ matrix.os }}-mostly-static
           path: artifacts/
